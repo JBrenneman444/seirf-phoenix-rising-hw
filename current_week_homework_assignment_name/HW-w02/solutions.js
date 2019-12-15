@@ -25,3 +25,19 @@ console.log(checkPalindrome("Radar"));
 console.log(checkPalindrome("Borscht"));
 
 /////////////////////////////////////////////
+
+// // SUM ARRAY
+// The function should return the sum of the numbers in the array. 
+// Use a for loop within the function to iterate over the array and sum the contents.
+let sum = 0;
+sumArray = (array) => {
+    for (i=0;i<6;i++) {
+    // sum + array first element, second element, etc.
+    sum = sum + array[i]
+    // 0 = 0 + 1
+    // repeat
+}
+return sum
+}
+console.log(sumArray([1, 2, 3, 4, 5, 6]));
+
