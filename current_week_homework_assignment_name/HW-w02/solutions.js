@@ -41,3 +41,86 @@ return sum
 }
 console.log(sumArray([1, 2, 3, 4, 5, 6]));
 
+// PRIME NUMBERS
+// test as far as the square root of that number
+// Example: console.log(Math.sqrt(4))
+
+// Step One
+checkPrime = (num) => {
+     for (i=2;i<=Math.sqrt(num);i++) {
+         if (num % i !== 0) {
+        return true
+     } else {
+        console.log("number is NOT PRIME")
+        return false
+     }
+ }
+}
+ console.log(checkPrime(8))
+
+// Step Two
+
+// first, set LIMIT
+// then, checkPrime for each number up to that limit
+
+printPrimes = (limit) => {
+    for (i=7;i<=limit;i++) {
+        if (checkPrime(i) == true) {
+            console.log(i + " is here")
+            } else {
+                return false
+                console.log("false")
+            }
+    }
+}
+console.log(printPrimes(7))
+
+// ROCK PAPER SCISSORS
+
+randomMove = () => {
+    let move = Math.floor(Math.random() * 10)
+    if (move <= 3.33) {
+        return "rock"
+    } else if (move > 3.33 && move <= 6.66) {
+        return "paper"
+    } else {
+        return "scissors"
+    }
+}
+
+// RULES: rock beats scissors, scissors beats paper, paper beats rock.
+
+// Then create a function called rockPaperScissors that runs one round of the game.
+// It should accept two arguments, the computer's move and the user's move, and
+// somehow compare the two to decide who the winner is and return who won.
+
+let cpuMove = randomMove();
+console.log("CPU chose: " + cpuMove)
+
+let playerMove = randomMove();
+console.log("Player chose: " + playerMove)
+
+// somehow compare the two to decide who the winner is and return who won
+rockPaperScissors = (cpuMove, playerMove) => {
+    if ((cpuMove == "paper" && playerMove == "paper") ||
+        (cpuMove == "rock" && playerMove == "rock")   ||
+        (cpuMove == "scissors" && playerMove == "scissors")
+    ) {
+        return "Tie!"
+    } else if 
+       ((cpuMove == "paper" && playerMove == "rock") ||
+        (cpuMove == "rock" && playerMove == "scissors")   ||
+        (cpuMove == "scissors" && playerMove == "paper")
+    ) {
+        return "CPU wins!"
+    } else if 
+        ((cpuMove == "rock" && playerMove == "paper") ||
+        (cpuMove == "scissors" && playerMove == "rock")   ||
+        (cpuMove == "paper" && playerMove == "scissors")
+    ) {
+        return "Player wins!"
+    } else {
+        return "What happened there?"
+    }
+}
+console.log(rockPaperScissors(cpuMove, playerMove))
