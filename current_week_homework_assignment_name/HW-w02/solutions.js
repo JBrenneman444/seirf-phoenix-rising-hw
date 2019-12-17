@@ -42,38 +42,37 @@ return sum
 console.log(sumArray([1, 2, 3, 4, 5, 6]));
 
 // PRIME NUMBERS
-// test as far as the square root of that number
-// Example: console.log(Math.sqrt(4))
+    // test as far as the square root of that number
+    // Example: console.log(Math.sqrt(4))
 
-// Step One
-checkPrime = (num) => {
-     for (i=2;i<=Math.sqrt(num);i++) {
-         if (num % i !== 0) {
-        return true
-     } else {
-        console.log("number is NOT PRIME")
-        return false
-     }
- }
-}
- console.log(checkPrime(8))
+// Step ONE
+const checkPrime = num => {
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      // if the number is evenly divisible by the current loop
+      if (num % i === 0) {
+        // that means the number is NOT prime, so return false to terminate the loop
+        return false;
+      }
+    }
+    // if the for loop never returns false, it's not evenly divisible by any number  from 2 to the square root, so it must be prime
+    console.log(num + " is a prime number");
+    return true;
+  };
+  console.log(checkPrime(5));
 
 // Step Two
-
-// first, set LIMIT
-// then, checkPrime for each number up to that limit
-
+    // first, set LIMIT
+    // then, checkPrime for each number up to that limit
 printPrimes = (limit) => {
-    for (i=7;i<=limit;i++) {
+    for (i=2;i<=limit;i++) {
+        // if the number is PRIME
         if (checkPrime(i) == true) {
-            console.log(i + " is here")
+            // log checkPrime
             } else {
-                return false
-                console.log("false")
             }
     }
 }
-console.log(printPrimes(7))
+console.log(printPrimes(97))
 
 // ROCK PAPER SCISSORS
 
@@ -124,3 +123,4 @@ rockPaperScissors = (cpuMove, playerMove) => {
     }
 }
 console.log(rockPaperScissors(cpuMove, playerMove))
+
